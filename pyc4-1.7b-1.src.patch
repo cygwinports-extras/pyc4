@@ -1,0 +1,53 @@
+diff -urN -x CYGWIN-PATCHES -x 'aclocal.m4*' -x autom4te.cache -x config.cache -x config.log -x config.status -x config.h -x config.h.in -x ABOUT-NLS -x Makefile.in.in -x Makevars.template -x '*SlackBuild*' -x '*.egg-info' -x '*.class' -x '*.pyc' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x COPYING -x INSTALL -x compile -x config-ml.in -x config.guess -x config.sub -x depcomp -x elisp-comp -x install-sh -x ltmain.sh -x mdate-sh -x missing -x mkinstalldirs -x py-compile -x symlink-tree -x texinfo.tex -x ylwrap -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x intltool.m4 -x intltool-extract -x intltool-extract.in -x intltool-merge -x intltool-merge.in -x intltool-update -x intltool-update.in origsrc/pyc4/c4.py src/pyc4/c4.py
+--- origsrc/pyc4/c4.py	2003-06-24 13:14:58.000000000 -0500
++++ src/pyc4/c4.py	2007-06-01 00:40:14.171875000 -0500
+@@ -1,4 +1,5 @@
+ #!/usr/bin/env python
++# -*- coding: UTF-8 -*-
+ """
+   Author: Daniel P. Clark
+   6ft Dan(TM)
+@@ -69,6 +70,7 @@
+ 
+ helptag = 0
+ audiotag = 0
++fontstag = 0
+ imagetag = 0
+ infotag = 0
+ 
+@@ -77,6 +79,8 @@
+                 helptag = 1
+         elif string.lower(x) in ("-a", "-audio", "--audio"):
+                 audiotag = 1
++        elif string.lower(x) in ("-f", "-fonts", "--fonts"):
++                fontstag = 1
+         elif string.lower(x) in ("-i", "-images", "--images"):
+                 imagetag = 1
+         elif string.lower(x) in ("-info", "--info"):
+@@ -91,6 +95,8 @@
+         print
+         print "\t-audio  DIR\tSpecify Audio Directory to use."
+         print "\t-a"
++        print "\t-fonts  DIR\tSpecify Font Directory to use."
++        print "\t-f"
+         print "\t-images DIR\tSpecify Image Directory to use."
+         print "\t-i"
+         print "\t-info      \tAbout the game and author."
+@@ -160,7 +166,16 @@
+ 	raise SystemExit, "Get SDL_image support!" # stop and complain
+ 
+ 
+-FontDir = "fonts"
++# directory containing times.ttf
++if fontstag:
++        for x in range(len(sys.argv)):
++                if sys.argv[x] == "-fonts":
++                        FontDir = sys.argv[x+1]
++                        if FontDir[-1] == os.sep:
++                                FontDir = FontDir[:-1]
++else:
++        FontDir = "fonts"
++
+ FontFile = "times.ttf"
+ 
+ # Bool  (here just for the heck of it)

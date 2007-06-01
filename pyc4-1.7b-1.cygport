@@ -1,0 +1,22 @@
+inherit python
+
+sub_pv=0.0.9b
+
+DESCRIPTION="SDL Connect Four game"
+HOMEPAGE="http://members.fortunecity.com/6ft_dan/Connect_Four/"
+SRC_URI="mirror://sourceforge/${PN}/${P}-${sub_pv}.tar.gz"
+SRC_DIR=${PN}
+
+src_compile() { :; }
+src_test() { :; }
+
+src_install() {
+	local pkgdatadir=/usr/share/${PN}
+
+	cd ${S}
+	dodir ${pkgdatadir}
+	cp -r c4.py audio/ fonts/ images/ ${D}${pkgdatadir}
+	python_optimize ${pkgdatadir}
+
+	dobin ${C}/pyc4
+}

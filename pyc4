@@ -1,0 +1,3 @@
+#!/bin/sh
+c4dir=/usr/share/pyc4
+exec python $c4dir/c4.py -audio $c4dir/audio -fonts $c4dir/fonts -images $c4dir/images

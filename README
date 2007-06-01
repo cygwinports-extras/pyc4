@@ -1,0 +1,79 @@
+pyc4
+-------------------------------------------
+Py Connect Four is a simple connect four game.  The classic!  
+This is a 2 player game where each player enters their name, then take 
+turns putting their pieces in trying to get 4 in a row first.
+
+Runtime requirements:
+  python-2.5.1-1
+  python-pygame-1.7.1-2
+
+Canonical homepage:
+  http://members.fortunecity.com/6ft_dan/Connect_Four/
+
+Canonical download:
+  http://downloads.sourceforge.net/pyc4/
+
+-------------------------------------------
+
+Build instructions:
+  unpack pyc4-1.7b-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./pyc4-1.7b-X.cygport all
+
+This will create:
+  /usr/src/pyc4-1.7b-X-src.tar.bz2
+  /usr/src/pyc4-1.7b-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+  /usr/bin/pyc4
+  /usr/share/doc/Cygwin/pyc4-1.7b.README
+  /usr/share/doc/pyc4-1.7b/COPYING
+  /usr/share/doc/pyc4-1.7b/ChangeLog
+  /usr/share/doc/pyc4-1.7b/LICENSE
+  /usr/share/doc/pyc4-1.7b/README
+  /usr/share/pyc4/audio/6d.wav
+  /usr/share/pyc4/audio/drop.wav
+  /usr/share/pyc4/audio/pick.wav
+  /usr/share/pyc4/audio/sdl.wav
+  /usr/share/pyc4/audio/textin.wav
+  /usr/share/pyc4/audio/win.wav
+  /usr/share/pyc4/c4.py
+  /usr/share/pyc4/c4.pyc
+  /usr/share/pyc4/c4.pyo
+  /usr/share/pyc4/fonts/times.ttf
+  /usr/share/pyc4/images/6dlogo.gif
+  /usr/share/pyc4/images/6dsoft.gif
+  /usr/share/pyc4/images/arrowl.gif
+  /usr/share/pyc4/images/arrowr.gif
+  /usr/share/pyc4/images/background.gif
+  /usr/share/pyc4/images/blackblock.gif
+  /usr/share/pyc4/images/c4icon.ico
+  /usr/share/pyc4/images/emptyblock.gif
+  /usr/share/pyc4/images/fblackblock.gif
+  /usr/share/pyc4/images/femptyblock.gif
+  /usr/share/pyc4/images/fredblock.gif
+  /usr/share/pyc4/images/redblock.gif
+  /usr/share/pyc4/images/sdl_prgb.gif
+  /usr/share/pyc4/images/startmenu.gif
+  /usr/share/pyc4/images/wblackblock.gif
+  /usr/share/pyc4/images/wredblock.gif
+
+------------------
+
+Port Notes:
+
+----- version 1.7b-1 -----
+Version bump; built with python-2.5.
+
+----- version 1.2-1 -----
+Initial release for Cygwin.
+
+
+Cygwin port maintained by:
+http://cygwinports.dotsrc.org/

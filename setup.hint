@@ -1,0 +1,6 @@
+category: Games
+requires: cygwin python python-pygame
+sdesc: "Two-player Connect Four game"
+ldesc: "Py Connect Four is a simple connect four game.  The classic!
+This is a 2 player game where each player enters their name, then take
+turns putting their pieces in trying to get 4 in a row first."
